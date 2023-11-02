@@ -1,17 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title color="primary">
       Tasks
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tasks</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-content>
+    <ion-searchbar [(ngModel)]="searchTerm" (ngModelChange)="filterTasks()"></ion-searchbar>
+    </ion-card-content>
+    <ion-list>
+      <ion-item-sliding side="start" *ngFor="let mockTasks of filteredTasks; let i = index">
+        <ion-item-options side="start">
+          <ion-item-option color="success">Archive</ion-item-option>
+        </ion-item-options>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+        <ion-item>
+          <ion-label>
+            <h2>{{ mockTasks.title}}</h2>
+            <p>{{ mockTasks.dateDue }}</p>
+          </ion-label>
+          <p></p>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option>Favorite</ion-item-option>
+          <ion-item-option color="danger">Delete</ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
+
+
 </ion-content>
