@@ -12,6 +12,9 @@
     <ion-searchbar [(ngModel)]="searchTerm" (ngModelChange)="filterTasks()"></ion-searchbar>
     </ion-card-content>
     <ion-list>
+      <ion-item>
+        <ion-button color="primary" expand="block" (click)="addNewTask()">Add new Task</ion-button>
+      </ion-item>
       <ion-item-sliding side="start" *ngFor="let mockTasks of filteredTasks; let i = index">
         <ion-item-options side="start">
           <ion-item-option color="success">Archive</ion-item-option>

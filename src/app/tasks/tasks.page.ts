@@ -9,15 +9,6 @@ export class TasksPage implements OnInit {
   searchTerm: string = '';
   filteredTasks: any[] = [];
 
-filterTasks() {
-  if (this.searchTerm.trim() === '') {
-    this.filteredTasks = this.mockTasks;
-  } else {
-    this.filteredTasks = this.mockTasks.filter((task) => {
-      return task.title.toLowerCase().includes(this.searchTerm.toLowerCase());
-    });
-  }
-}
   mockTasks = [
     {
       title: 'Run 5km',
@@ -81,6 +72,20 @@ filterTasks() {
 
   ngOnInit() {
     this.filteredTasks = this.mockTasks;
+  }
+
+  filterTasks() {
+    if (this.searchTerm.trim() === '') {
+      this.filteredTasks = this.mockTasks;
+    } else {
+      this.filteredTasks = this.mockTasks.filter((task) => {
+        return task.title.toLowerCase().includes(this.searchTerm.toLowerCase());
+      });
+    }
+  }
+
+  addNewTask() {
+    
   }
 
 }
