@@ -30,5 +30,11 @@ export class AddTaskModalComponent implements OnInit {
     });
   }
 
+  dismissModal() {
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+  }
+
 
 }

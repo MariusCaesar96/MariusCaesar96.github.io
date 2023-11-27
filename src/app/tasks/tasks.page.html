@@ -13,7 +13,7 @@
     </ion-card-content>
     <ion-list [@listStagger]="runs.length">
       <ion-item>
-        <ion-button color="primary" expand="block" (click)="presentAddModal()">Add new Task</ion-button>
+        <ion-button color="primary" expand="full" (click)="presentAddModal()">Add new Task</ion-button>
       </ion-item>
       <ion-item-sliding side="start" *ngFor="let run of runs; let i = index">
         <ion-item-options side="start">
