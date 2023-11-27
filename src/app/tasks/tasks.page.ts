@@ -35,11 +35,14 @@ export class TasksPage implements OnInit {
     this.tasksService.deleteTask(task);
   }
 
-  presentEditModal(run: Run) {
-    this.modalController.create({
+  async presentEditModal(run: Run) {
+    const modal = await this.modalController.create({
       component: EditTaskModalComponent,
       componentProps: { run }
-    }).then(modal => modal.present())
+    });
+    await modal.present();
+    const { data: { data } } = await modal.onDidDismiss();
+    this.updateTask(data);
   }
 
   async presentAddModal() {
