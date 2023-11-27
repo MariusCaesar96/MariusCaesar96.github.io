@@ -3,11 +3,13 @@ import { Run, TaskService } from '../task.service';
 import { ModalController } from '@ionic/angular';
 import { EditTaskModalComponent } from './edit-task-modal/edit-task-modal.component';
 import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
+import { listStagger } from '../animations/animations';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tasks.page.html',
-  styleUrls: ['tasks.page.scss']
+  styleUrls: ['tasks.page.scss'],
+  animations: [listStagger]
 })
 export class TasksPage implements OnInit {
   searchTerm: string = '';
