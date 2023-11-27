@@ -24,18 +24,17 @@ export class TaskService {
       duration: '00:30:00',
       distance: 5,
       thumbnail: '',
-      location: 'Central Park', // Add the location property with a mock location
+      location: 'Central Park',
       date: new Date('2022-01-01')
     },
-    // Add more mock running tasks here
     {
       title: 'Afternoon Run',
       description: 'Run for 45 minutes',
       duration: '00:45:00',
       distance: 7,
       thumbnail: '',
-      location: 'Beach', // Add the location property with a mock location
-      date: new Date('2022-01-01') // Add the date property with a mock date
+      location: 'Beach',
+      date: new Date('2022-01-01')
     },
     {
       title: 'Evening Run',
@@ -43,10 +42,55 @@ export class TaskService {
       duration: '00:20:00',
       distance: 3,
       thumbnail: '',
-      location: 'Neighborhood Park', // Add the location property with a mock location
-      date: new Date('2022-01-02') // Add the date property with a mock date
+      location: 'Neighborhood Park',
+      date: new Date('2022-01-02')
     },
-    // ... Repeat this pattern for the remaining tasks
+    // Add 5 more mock running tasks here
+    {
+      title: 'Trail Run',
+      description: 'Run for 1 hour',
+      duration: '01:00:00',
+      distance: 10,
+      thumbnail: '',
+      location: 'Mountain Trail',
+      date: new Date('2022-01-03')
+    },
+    {
+      title: 'Night Run',
+      description: 'Run for 40 minutes',
+      duration: '00:40:00',
+      distance: 6,
+      thumbnail: '',
+      location: 'City Streets',
+      date: new Date('2022-01-04')
+    },
+    {
+      title: 'Park Run',
+      description: 'Run for 25 minutes',
+      duration: '00:25:00',
+      distance: 4,
+      thumbnail: '',
+      location: 'Local Park',
+      date: new Date('2022-01-05')
+    },
+    {
+      title: 'Long Run',
+      description: 'Run for 2 hours',
+      duration: '02:00:00',
+      distance: 15,
+      thumbnail: '',
+      location: 'Country Road',
+      date: new Date('2022-01-06')
+    },
+    {
+      title: 'Interval Run',
+      description: 'Run for 35 minutes',
+      duration: '00:35:00',
+      distance: 5.5,
+      thumbnail: '',
+      location: 'Track',
+      date: new Date('2022-01-07')
+    }
   ]
 
   private tasks$ = new BehaviorSubject(this.runs)
