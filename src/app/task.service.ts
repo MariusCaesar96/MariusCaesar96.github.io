@@ -78,4 +78,15 @@ export class TaskService {
     this.tasks$.next(tasks);
   }
 
+  filterTasks(searchTerm: string) {
+    const tasks = this.tasks$.getValue();
+    if (searchTerm === '') {
+      return this.tasks$.asObservable();
+    } else {
+      const filteredTasks = tasks.filter(task => {
+        return task.title.toLowerCase().includes(searchTerm.toLowerCase());
+      })
+      return new BehaviorSubject(filteredTasks);
+    }
+  }
 }

@@ -10,6 +10,7 @@ import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component
   styleUrls: ['tasks.page.scss']
 })
 export class TasksPage implements OnInit {
+  searchTerm: string = '';
   runs: Run[] = [];
 
   constructor(
@@ -52,6 +53,12 @@ export class TasksPage implements OnInit {
     await modal.present();
     const { data: { data } } = await modal.onDidDismiss();
     this.addTask(data);
+  }
+
+  filterTasks() {
+    this.tasksService.filterTasks(this.searchTerm).subscribe(tasks => {
+      this.runs = tasks;
+    })
   }
 
 }
