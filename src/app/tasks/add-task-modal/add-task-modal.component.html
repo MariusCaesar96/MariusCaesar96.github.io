@@ -1,0 +1,49 @@
+<!-- FILEPATH: /Users/caesarion/Documents/practiceMakesPerfect/CLIENT_WORK/Strive/src/app/tasks/add-task-modal/add-task-modal.component.html -->
+
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Add Run
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Add Run</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <form (ngSubmit)="addRun()">
+
+            <ion-item>
+                <ion-label>Title</ion-label>
+                <ion-input type="text" [(ngModel)]="newRun.title" name="title"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Description</ion-label>
+                <ion-textarea [(ngModel)]="newRun.description" name="description"></ion-textarea>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Distance (in km)</ion-label>
+                <ion-input type="number" [(ngModel)]="newRun.distance" name="distance"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Duration (in minutes)</ion-label>
+                <ion-input type="number" [(ngModel)]="newRun.duration" name="duration"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Date</ion-label>
+                <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="newRun.date" name="date"></ion-datetime>
+            </ion-item>
+
+            <ion-button type="submit" expand="full">Add Run</ion-button>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

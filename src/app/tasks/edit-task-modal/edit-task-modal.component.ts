@@ -1,6 +1,6 @@
 
 import { Component, Input } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { Run, TaskService } from 'src/app/task.service';
 
 @Component({
@@ -20,7 +20,8 @@ export class EditTaskModalComponent {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
-      'dismissed': true
+      'dismissed': true,
+      data: this.run
     });
   }
 

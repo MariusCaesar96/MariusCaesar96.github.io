@@ -13,7 +13,7 @@
     </ion-card-content> -->
     <ion-list>
       <ion-item>
-        <ion-button color="primary" expand="block" (click)="addTask()">Add new Task</ion-button>
+        <ion-button color="primary" expand="block" (click)="presentAddModal()">Add new Task</ion-button>
       </ion-item>
       <ion-item-sliding side="start" *ngFor="let run of runs; let i = index">
         <ion-item-options side="start">
@@ -29,7 +29,7 @@
         </ion-item>
 
         <ion-item-options side="end">
-          <ion-item-option (click)="presentModal(run)">Edit</ion-item-option>
+          <ion-item-option (click)="presentEditModal(run)">Edit</ion-item-option>
           <ion-item-option color="danger" (click)="deleteTask(run)">Delete</ion-item-option>
         </ion-item-options>
 

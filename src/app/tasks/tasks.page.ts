@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Run, TaskService } from '../task.service';
 import { ModalController } from '@ionic/angular';
 import { EditTaskModalComponent } from './edit-task-modal/edit-task-modal.component';
+import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
 
 @Component({
   selector: 'app-tab2',
@@ -22,16 +23,7 @@ export class TasksPage implements OnInit {
     })
   }
 
-  addTask() {
-    const task: Run = {
-      title: 'New Task',
-      description: 'New Task Description',
-      duration: '00:00:00',
-      distance: 0,
-      thumbnail: '',
-      location: 'Abuja, Nigeria',
-      date: new Date()
-    }
+  addTask(task: Run) {
     this.tasksService.addTask(task);
   }
 
@@ -43,11 +35,20 @@ export class TasksPage implements OnInit {
     this.tasksService.deleteTask(task);
   }
 
-  presentModal(run: Run) {
+  presentEditModal(run: Run) {
     this.modalController.create({
       component: EditTaskModalComponent,
       componentProps: { run }
     }).then(modal => modal.present())
+  }
+
+  async presentAddModal() {
+    const modal = await this.modalController.create({
+      component: AddTaskModalComponent,
+    });
+    await modal.present();
+    const { data: { data } } = await modal.onDidDismiss();
+    this.addTask(data);
   }
 
 }
