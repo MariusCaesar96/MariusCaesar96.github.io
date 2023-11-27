@@ -1,0 +1,58 @@
+<!-- FILEPATH: /Users/caesarion/Documents/practiceMakesPerfect/CLIENT_WORK/Strive/src/app/tasks/edit-task-modal/edit-task-modal.component.html -->
+
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Edit Run</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Edit Run Details</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <form (ngSubmit)="onSubmit()">
+                <ion-item>
+                    <ion-label>Title</ion-label>
+                    <ion-input type="text" [(ngModel)]="run.title" name="title"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Description</ion-label>
+                    <ion-input type="text" [(ngModel)]="run.description" name="description"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Distance</ion-label>
+                    <ion-input type="number" [(ngModel)]="run.distance" name="distance"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Duration</ion-label>
+                    <ion-input type="text" [(ngModel)]="run.duration" name="duration"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Date</ion-label>
+                    <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="run.date" name="date"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Location</ion-label>
+                    <ion-input type="text" [(ngModel)]="run.location" name="location"></ion-input>
+                </ion-item>
+
+                <ion-button type="submit" expand="full">Save</ion-button>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+

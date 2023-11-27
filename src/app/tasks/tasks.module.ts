@@ -6,6 +6,7 @@ import { TasksPage } from './tasks.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { TasksPageRoutingModule } from './tasks-routing.module';
+import { EditTaskModalComponent } from './edit-task-modal/edit-task-modal.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { TasksPageRoutingModule } from './tasks-routing.module';
     ExploreContainerComponentModule,
     TasksPageRoutingModule
   ],
-  declarations: [TasksPage]
+  declarations: [TasksPage, EditTaskModalComponent]
 })
 export class TasksPageModule {}
