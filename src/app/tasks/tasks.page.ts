@@ -82,6 +82,8 @@ export class TasksPage implements OnInit {
         return task.title.toLowerCase().includes(this.searchTerm.toLowerCase());
       });
     }
+
+    
   }
 
   addNewTask() {

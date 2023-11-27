@@ -38,7 +38,7 @@
     
     <ion-card-content>
       <ion-list >
-        <ion-item-sliding *ngFor="let runs of recentRuns">
+        <ion-item-sliding *ngFor="let runs of runs">
           <ion-item-options side="start">
             <ion-item-option color="success">Archive</ion-item-option>
           </ion-item-options>
@@ -47,7 +47,7 @@
             <ion-thumbnail slot="start" class="ion-margin">
               <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
             </ion-thumbnail>
-            <ion-label>{{ runs.name}} <br> <span>{{ runs.time }}</span></ion-label>
+            <ion-label>{{ runs.title}} <br> <span>{{ runs.duration }}</span></ion-label>
             <p color="primary">{{runs.distance}} miles</p>
 
           </ion-item>

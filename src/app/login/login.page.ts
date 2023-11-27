@@ -12,6 +12,6 @@ export class LoginPage {
 
   login() {
     console.log('login');
-    this.router.navigateByUrl('/tabs/profile');
+    this.router.navigateByUrl('/tabs');
   }
 }
